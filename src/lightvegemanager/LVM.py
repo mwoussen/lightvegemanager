@@ -640,8 +640,9 @@ class LightVegeManager(object):
                 else:
                     aggregated, raw = {}, {}
                     self.__sensors_outputs = {"par": {}}
-                    for id, triangles in sensors_caribu.items():
-                        self.__sensors_outputs["par"][id] = 1.0
+                    if sensors_caribu is not None :
+                        for id, triangles in sensors_caribu.items():
+                            self.__sensors_outputs["par"][id] = 1.0
 
                 if self.__issensors:
                     self.__sensors_outputs_df = out_caribu_sensors(
